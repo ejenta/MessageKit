@@ -85,9 +85,8 @@ open class MessageInputBar: UIView {
      1. It's axis is initially set to .vertical
      2. It's alignment is initially set to .fill
      */
-    open let topStackView: InputStackView = {
-        let stackView = InputStackView(axis: .vertical, spacing: 0)
-        stackView.alignment = .fill
+    open let topStackView: HorizontalScrollableStackView = {
+        let stackView = HorizontalScrollableStackView()
         return stackView
     }()
     

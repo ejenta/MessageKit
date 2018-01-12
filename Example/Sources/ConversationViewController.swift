@@ -46,7 +46,7 @@ class ConversationViewController: MessagesViewController {
                 }
             }
         }
-
+        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -70,34 +70,76 @@ class ConversationViewController: MessagesViewController {
                             target: self,
                             action: #selector(handleTyping))
         ]
+        
+        let items: [InputBarButtonItem] = [makeButton(named: "ic_camera"),
+                                           makeButton(named: "ic_camera"),
+                                            makeButton(named: "ic_camera"),
+                                             makeButton(named: "ic_camera"),
+                                              makeButton(named: "ic_camera"),
+                                               makeButton(named: "ic_camera"),
+                                                makeButton(named: "ic_camera"),
+                                                 makeButton(named: "ic_camera"),
+                                                  makeButton(named: "ic_camera"),
+                                                   makeButton(named: "ic_camera"),
+                                                    makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera"),
+                                                     makeButton(named: "ic_camera")
+        
+            ]
+        items.forEach { $0.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0)}
+        messageInputBar.setStackViewItems(items, forStack: .top, animated: true)
+        
     }
     
     @objc func handleTyping() {
         
-        defer {
-            isTyping = !isTyping
-        }
-        
-        if isTyping {
-            
-            messageInputBar.topStackView.arrangedSubviews.first?.removeFromSuperview()
-            messageInputBar.topStackViewPadding = .zero
-            
-        } else {
-            
-            let label = UILabel()
-            label.text = "nathan.tannar is typing..."
-            label.font = UIFont.boldSystemFont(ofSize: 16)
-            messageInputBar.topStackView.addArrangedSubview(label)
-            
-            
-            messageInputBar.topStackViewPadding.top = 6
-            messageInputBar.topStackViewPadding.left = 12
-            
-            // The backgroundView doesn't include the topStackView. This is so things in the topStackView can have transparent backgrounds if you need it that way or another color all together
-            messageInputBar.backgroundColor = messageInputBar.backgroundView.backgroundColor
-            
-        }
+//        defer {
+//            isTyping = !isTyping
+//        }
+//
+//        if isTyping {
+//
+//            messageInputBar.topStackView.arrangedSubviews.first?.removeFromSuperview()
+//            messageInputBar.topStackViewPadding = .zero
+//
+//        } else {
+//
+//            let label = UILabel()
+//            label.text = "nathan.tannar is typing..."
+//            label.font = UIFont.boldSystemFont(ofSize: 16)
+//            messageInputBar.topStackView.addArrangedSubview(label)
+//
+//
+//            messageInputBar.topStackViewPadding.top = 6
+//            messageInputBar.topStackViewPadding.left = 12
+//
+//            // The backgroundView doesn't include the topStackView. This is so things in the topStackView can have transparent backgrounds if you need it that way or another color all together
+//            messageInputBar.backgroundColor = messageInputBar.backgroundView.backgroundColor
+//
+//        }
 
     }
     
