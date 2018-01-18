@@ -16,6 +16,14 @@ open class HorizontalScrollableStackView: UIScrollView {
             return self.stackView.arrangedSubviews
         }
     }
+    public var spacing: CGFloat {
+        get {
+            return self.stackView.spacing
+        }
+        set {
+            self.stackView.spacing = newValue
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
