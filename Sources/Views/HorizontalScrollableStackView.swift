@@ -9,7 +9,7 @@ import UIKit
 
 open class HorizontalScrollableStackView: UIScrollView {
     
-    var stackView: UIStackView!
+    public var stackView: UIStackView!
     
     public var arrangedSubviews: [UIView] {
         get {
