@@ -51,6 +51,9 @@ public enum MessageData {
 
     /// An emoji message.
     case emoji(String)
+    
+    /// A typing indicator message.
+    case typing(UIImage)
 
     // MARK: - Not supported yet
 
